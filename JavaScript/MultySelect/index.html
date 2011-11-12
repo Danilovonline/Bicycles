@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Multy select</title>
+</head>
+<body>
+	<table style="border: none";>
+		<tr>
+			<td>
+				<select multiple="multiple" id="my_select" style="width: 100px; height: 150px;">
+					<option value='101'>101</option>
+					<option value='102'>102</option>
+					<option value='103'>103</option>
+					<option value='104'>104</option>
+					<option value='109'>109</option>
+				</select>
+			</td>
+			<td style="padding-right: 10px; padding-left: 10px;">
+				<input type="button" value=">" onClick="ms.sendFromMyToResult();"><br />
+				<input type="button" value="<" onClick="ms.sendFromResultToMy();">
+				<br /><br />
+        <input type="button" value=">>" onClick="ms.sendAllFromMyToResult();"><br />
+        <input type="button" value="<<" onClick="ms.sendAllFromResultToMy();">
+				
+				
+			</td>
+			<td>
+				<select multiple="multiple" id="result_select" style="width: 100px; height: 150px;"></select>
+			</td>
+			<td style="padding-right: 10px; padding-left: 10px;">
+			 <input type='button' value='^' onclick="ms.upOptionResult()"> <br />
+			 <input type='button' value='v' onclick="ms.downOptionResult()"> <br />
+			 
+			</td>	
+		</tr>
+	</table>
+	
+	<script type="text/javascript" src="multyselect.js"></script>
+	<script type="text/javascript">var ms = new multySelect(document.getElementById('my_select'), document.getElementById('result_select'));</script>
+		
+</body>
+</html>

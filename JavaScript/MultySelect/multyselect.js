@@ -136,13 +136,24 @@ function multySelect(my_select, result_select) {
   
   
   function interchange(s, i1, i2) {
-  	t1 = s.options[i1].text;
-  	v1 = s.options[i1].value;
-  	
-  	s.options[i1].text = s.options[i2].text;
-  	s.options[i1].value = s.options[i2].value;
+    var clone1 = s.options[i1].cloneNode(true);
+    var clone2 = s.options[i2].cloneNode(true);
+    
+  	s.options[i1] = clone2;
+    s.options[i2] = clone1;
+  }
+
+  
+  function interchange1(s, i1, i2) {
+    t1 = s.options[i1].text;
+    v1 = s.options[i1].value;
+  
+    s.options[i1].text = s.options[i2].text;
+    s.options[i1].value = s.options[i2].value;
 
     s.options[i2].text = t1;
     s.options[i2].value = v1;
   }
+
+
 }
